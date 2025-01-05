@@ -1,0 +1,60 @@
+--Create table query:
+
+CREATE TABLE Books (
+    Id INT IDENTITY(1,1) PRIMARY KEY, -- Auto-incrementing primary key
+    Publisher NVARCHAR(255) NOT NULL, -- Publisher name
+    Title NVARCHAR(255) NOT NULL, -- Book title
+    AuthorLastName NVARCHAR(255) NOT NULL, -- Author's last name
+    AuthorFirstName NVARCHAR(255) NOT NULL, -- Author's first name
+    Price DECIMAL(10, 2) NOT NULL, -- Price with 10 digits and 2 decimal places
+    Year INT NULL, -- Publication year
+    City NVARCHAR(255) NULL, -- Publisher's city
+    JournalTitle NVARCHAR(255) NULL, -- Journal title
+    TitleOfContainer NVARCHAR(255) NULL, -- Title of the container
+    PageNumber NVARCHAR(50) NULL, -- Page number
+    Month NVARCHAR(20) NULL, -- Month
+    URL NVARCHAR(500) NULL, -- URL
+    Volume NVARCHAR(50) NULL -- Volume
+);
+
+--Insert query:
+
+INSERT INTO Books 
+    (Publisher, Title, AuthorLastName, AuthorFirstName, Price, Year, City, JournalTitle, TitleOfContainer, PageNumber, Month, URL, Volume)
+VALUES
+    ('HarperCollins', 'Pride and Prejudice', 'Austen', 'Jane', 7.99, 1813, 'London', 'Literary Studies Journal', 'Romantic Literature', '45-78', 'June', 'https://example.com/book-details', 'no 2'),
+    ('HarperCollins', 'To Kill a Mockingbird', 'Lee', 'Harper', 8.99, 1960, 'New York', 'Literary Studies Journal', 'Classic Novels', '22-56', 'July', 'https://example.com/to-kill-a-mockingbird', 'no 1'),
+    ('Macmillan', 'The Catcher in the Rye', 'Salinger', 'J.D.', 9.99, 1951, 'New York', 'Literary Studies Journal', 'American Literature', '34-67', 'August', 'https://example.com/catcher-in-the-rye', 'no 3'),
+    ('Penguin Random House', 'The Great Gatsby', 'Fitzgerald', 'F. Scott', 10.99, 1925, 'New York', 'Literary Studies Journal', 'Modern American Fiction', '12-45', 'September', 'https://example.com/great-gatsby', 'no 4'),
+    ('Raghul', 'Phycology of Money', 'A', 'Raghul Prasanth', 250.50, 2022, 'Chennai', 'Finance Journal', 'Personal Finance', '55-99', 'October', 'https://example.com/phycology-of-money', 'no 5'),
+    ('Simon & Schuster', '1984', 'Orwell', 'George', 12.99, 1949, 'London', 'Dystopian Fiction Journal', 'Totalitarianism Studies', '89-112', 'November', 'https://example.com/1984', 'no 6'),
+    ('Oxford Press', 'The Hobbit', 'Tolkien', 'J.R.R.', 15.49, 1937, 'Oxford', 'Fantasy Journal', 'Epic Adventures', '200-245', 'December', 'https://example.com/the-hobbit', 'no 2'),
+    ('HarperCollins', 'Moby Dick', 'Melville', 'Herman', 9.49, 1851, 'London', 'Literary Studies Journal', 'Sea Adventures', '123-150', 'January', 'https://example.com/moby-dick', 'no 4'),
+    ('Penguin Random House', 'The Catcher in the Rye', 'Salinger', 'J.D.', 11.99, 1951, 'New York', 'Literary Studies Journal', 'Coming of Age', '76-100', 'February', 'https://example.com/catcher-in-the-rye', 'no 7'),
+    ('Macmillan', '1984', 'Orwell', 'George', 14.99, 1949, 'London', 'Dystopian Literature', 'Revolutionary Texts', '50-90', 'March', 'https://example.com/1984-book', 'no 3');
+
+--Stored procedures: -
+
+--1)GetBooksSortedByPublisherAuthorTitle
+
+CREATE PROCEDURE GetBooksSortedByPublisherAuthorTitle
+AS
+BEGIN
+    SELECT * FROM Books
+    ORDER BY Publisher, AuthorLastName, AuthorFirstName, Title;
+END;
+
+--2)GetBooksSortedByAuthorTitle
+
+CREATE PROCEDURE GetBooksSortedByAuthorTitle
+AS
+BEGIN
+    SELECT * FROM Books
+    ORDER BY AuthorLastName, AuthorFirstName, Title;
+END;
+
+--Select Queries:
+
+SELECT * FROM BookS;
+EXEC GetBooksSortedByPublisherAuthorTitle
+EXEC GetBooksSortedByAuthorTitle
