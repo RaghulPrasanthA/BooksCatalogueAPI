@@ -10,6 +10,9 @@ D:\Projects\BooksCatalogueAPI-main\Entity\obj\Debug\net6.0\Entity.dll
 D:\Projects\BooksCatalogueAPI-main\Entity\obj\Debug\net6.0\refint\Entity.dll
 D:\Projects\BooksCatalogueAPI-main\Entity\obj\Debug\net6.0\Entity.pdb
 D:\Projects\BooksCatalogueAPI-main\Entity\obj\Debug\net6.0\ref\Entity.dll
+D:\Projects\API_Project\BooksCatalogueAPI\Entity\bin\Debug\net6.0\Entity.deps.json
+D:\Projects\API_Project\BooksCatalogueAPI\Entity\bin\Debug\net6.0\Entity.dll
+D:\Projects\API_Project\BooksCatalogueAPI\Entity\bin\Debug\net6.0\Entity.pdb
 D:\Projects\API_Project\BooksCatalogueAPI\Entity\obj\Debug\net6.0\Entity.csproj.AssemblyReference.cache
 D:\Projects\API_Project\BooksCatalogueAPI\Entity\obj\Debug\net6.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
 D:\Projects\API_Project\BooksCatalogueAPI\Entity\obj\Debug\net6.0\Entity.AssemblyInfoInputs.cache
@@ -18,7 +21,4 @@ D:\Projects\API_Project\BooksCatalogueAPI\Entity\obj\Debug\net6.0\Entity.csproj.
 D:\Projects\API_Project\BooksCatalogueAPI\Entity\obj\Debug\net6.0\Entity.dll
 D:\Projects\API_Project\BooksCatalogueAPI\Entity\obj\Debug\net6.0\refint\Entity.dll
 D:\Projects\API_Project\BooksCatalogueAPI\Entity\obj\Debug\net6.0\Entity.pdb
-D:\Projects\API_Project\BooksCatalogueAPI\Entity\bin\Debug\net6.0\Entity.deps.json
-D:\Projects\API_Project\BooksCatalogueAPI\Entity\bin\Debug\net6.0\Entity.dll
-D:\Projects\API_Project\BooksCatalogueAPI\Entity\bin\Debug\net6.0\Entity.pdb
 D:\Projects\API_Project\BooksCatalogueAPI\Entity\obj\Debug\net6.0\ref\Entity.dll

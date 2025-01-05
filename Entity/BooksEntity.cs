@@ -38,12 +38,19 @@
 
     public partial class PostResponse
     {
-        public bool success { get; set; }
-        public string? message { get; set; }
+        public bool Success { get; set; }
+        public string? Message { get; set; }
     }
 
-    public enum GetRequest
+    public enum SortingOption
     {
-       
+       PublisherBasedSorting = 1,
+       AuthorBasedSorting = 2,
+    }
+
+    public partial class GetBooksRequest 
+    {
+        public bool IsSp { get; set; }
+        public SortingOption SortingOption { get; set; }
     }
 }

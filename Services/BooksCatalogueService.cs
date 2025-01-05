@@ -1,12 +1,12 @@
-﻿using Data.Models;
+﻿using AutoMapper;
 using Data;
+using Data.Models;
 using Entity;
 using Microsoft.EntityFrameworkCore;
-using AutoMapper;
 
 namespace Services
 {
-    
+
     public class BooksCatalogueService : IBooksCatalogueService
     {
         private readonly AppDbContext _context;
@@ -61,20 +61,16 @@ namespace Services
                 var resp = new PostResponse();
                 if (books == null || books.Count == 0)
                 {
-                    resp.message = "There is nothing to insert";
+                    resp.Message = "There is nothing to insert";
                     return resp;
                 }
                 else
                 {
-                    foreach (var book in books)
-                    {
-                        var newBook = _mapper.Map<Books>(book);
-                        _context.Books.Add(newBook);
-                        await _context.SaveChangesAsync();
-                    }
-
-                    resp.success = true;
-                    resp.message = "Saved Successfully";
+                    var newBooks = _mapper.Map<List<Books>>(books);
+                    _context.Books.AddRange(newBooks);
+                    await _context.SaveChangesAsync();
+                    resp.Success = true;
+                    resp.Message = "Saved Successfully";
                     return resp;
                 }
             }
@@ -100,6 +96,40 @@ namespace Services
                 return data.Select(b => _mapper.Map<BooksEntity>(b)).ToList();
             }
             catch(Exception) { throw; }//Handle exceptions as per project requirements later 
+        }
+
+        public async Task<List<BooksEntity>> GenericSort(GetBooksRequest request)
+        {
+            try
+            {
+                var resp = new List<BooksEntity>();
+
+                switch (request.SortingOption)
+                {
+                    case SortingOption.AuthorBasedSorting when request.IsSp:
+                        resp = await GetSortedByAuthorSp();
+                        break;
+
+                    case SortingOption.PublisherBasedSorting when request.IsSp:
+                        resp = await GetSortedByPublisherSp();
+                        break;
+
+                    case SortingOption.AuthorBasedSorting when !request.IsSp:
+                        resp = await GetSortedBooksByAuthorName();
+                        break;
+
+                    case SortingOption.PublisherBasedSorting when !request.IsSp:
+                        resp = await GetSortedBooksByPublisher();
+                        break;
+
+                    default:
+                        // Handle cases if needed 
+                        break;
+                }
+
+                return resp;
+            }
+            catch (Exception) { throw; }//Handle exceptions as per project requirements later 
         }
 
     }

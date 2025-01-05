@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BooksCatalogueAPI</name>
+    </assembly>
+    <members>
+        <member name="T:BooksCatalogueAPI.Controllers.BooksCatalogueController">
+            <summary>
+            BooksCatalogue controlller
+            </summary>
+        </member>
+        <member name="M:BooksCatalogueAPI.Controllers.BooksCatalogueController.#ctor(Services.IBooksCatalogueService)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="bookCatalogueService"></param>
+        </member>
+        <member name="M:BooksCatalogueAPI.Controllers.BooksCatalogueController.GetSortedBooksByPublisher">
+            <summary>
+            Get Books sort by Publisher, AuthorLastName, AuthorFirstName and Title
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BooksCatalogueAPI.Controllers.BooksCatalogueController.GetSortedBooksByAuthorName">
+            <summary>
+            Get Books sort by AuthorLastName, AuhorFirstName and Title
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BooksCatalogueAPI.Controllers.BooksCatalogueController.GetTotalPrice">
+            <summary>
+            Get Total Price of all Books
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BooksCatalogueAPI.Controllers.BooksCatalogueController.CreateBooks(System.Collections.Generic.List{Entity.CreateBooksRequest})">
+            <summary>
+            saves the entire list to the database with only one call to the DB server.
+            </summary>
+            <param name="books"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BooksCatalogueAPI.Controllers.BooksCatalogueController.GetSortedByPublisherSp">
+            <summary>
+            Get Books sort by Publisher, AuthorLastName, AuthorFirstName and Title using stored procedure
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BooksCatalogueAPI.Controllers.BooksCatalogueController.GetSortedByAuthorSp">
+            <summary>
+            Get Books sort by AuthorLastName, AuhorFirstName and Title using stored procedure
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BooksCatalogueAPI.Controllers.BooksCatalogueController.GenericSort(Entity.GetBooksRequest)">
+            <summary>
+            Get list of books sorted based on the provided request
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
